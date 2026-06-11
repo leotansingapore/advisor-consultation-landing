@@ -17,7 +17,7 @@
   /* type */
   --text:      #f3f1ea;
   --text-mute: #a3a09a;
-  --text-dim:  #6b6964;
+  --text-dim:  #807d77; /* raised to 4.88:1 on --bg for WCAG AA */
 
   /* metal */
   --gold:      #c8a24a;
@@ -27,7 +27,7 @@
 
   /* signal */
   --green:     #6fae7f;
-  --red:       #c0635c;
+  --red:       #cf7a73; /* balanced against --green contrast */
 
   --radius:    18px;
   --radius-sm: 12px;
@@ -38,7 +38,11 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 84px; }
+
+/* skip link (a11y) */
+.skip { position:absolute; left:-9999px; top:auto; }
+.skip:focus { left:16px; top:16px; z-index:100; background:var(--bg-2); color:var(--text); padding:10px 16px; border:1px solid var(--gold-deep); border-radius:8px; }
 
 body {
   margin: 0;
@@ -94,7 +98,7 @@ a { color: inherit; text-decoration: none; }
 /* eyebrow / kicker — monospaced, with a lead rule */
 .eyebrow {
   font-family: 'Spline Sans Mono', ui-monospace, monospace;
-  font-size: 11.5px; letter-spacing: 0.34em; text-transform: uppercase;
+  font-size: 11.5px; letter-spacing: 0.24em; text-transform: uppercase;
   color: var(--gold-soft); font-weight: 500;
   display: inline-flex; align-items: center; gap: 12px;
 }
@@ -108,7 +112,7 @@ a { color: inherit; text-decoration: none; }
 /* section index numeral motif */
 .sec-no {
   font-family: 'Spline Sans Mono', monospace; font-size: 12px; letter-spacing: 0.2em;
-  color: var(--gold-deep); font-weight: 500;
+  color: var(--gold); font-weight: 500;
 }
 
 .hairline { height: 1px; width: 100%; background: linear-gradient(90deg, transparent, var(--line-2) 25%, var(--line-2) 75%, transparent); }
@@ -179,10 +183,12 @@ section { padding: 110px 0; position: relative; overflow: hidden; }
 }
 
 /* heading scale helpers */
-.h-hero { font-size: clamp(40px, 6.4vw, 82px); }
-.h-sec  { font-size: clamp(29px, 4.4vw, 50px); }
-.h-sub  { font-size: clamp(24px, 3.4vw, 36px); }
+.h-hero { font-size: clamp(40px, 6.4vw, 82px); text-wrap: balance; }
+.h-sec  { font-size: clamp(29px, 4.4vw, 50px); text-wrap: balance; }
+.h-sub  { font-size: clamp(24px, 3.4vw, 36px); text-wrap: balance; }
 .lead   { font-size: clamp(18px, 2.1vw, 22px); color: var(--text-mute); line-height: 1.58; }
+/* hero/book lead: centered block, left-aligned prose for readability */
+.lead.hero-lead { text-align: left; max-width: 54ch; margin-inline: auto; }
 
 /* ---- cards ---- */
 .card { background: linear-gradient(180deg, var(--surface), var(--bg-2)); border: 1px solid var(--line); border-radius: var(--radius); }
@@ -295,4 +301,18 @@ footer.ft { border-top: 1px solid var(--line); padding: 40px 0; }
   .js-anim .reveal { opacity: 1 !important; transform: none !important; }
   .scarcity .dot { animation: none; }
   html { scroll-behavior: auto; }
+}
+
+/* ---- mobile refinements ---- */
+@media (max-width: 560px) {
+  /* nav booking CTA meets the 44px tap-target minimum */
+  header.nav .btn-gold { min-height: 44px; }
+  /* tighter, balanced kickers so all-caps mono reads as words */
+  .eyebrow { font-size: 10.5px; letter-spacing: 0.18em; text-wrap: balance; }
+  /* calmer scarcity line */
+  .scarcity { font-size: 11px; letter-spacing: 0.06em; line-height: 1.45; }
+  /* primary CTAs go near-full-width for thumb affordance,
+     excluding the persistent nav button and the index card pills */
+  .btn-gold, .btn-ghost { width: 100%; justify-content: center; }
+  header.nav .btn-gold, .open-row .btn-gold { width: auto; }
 }

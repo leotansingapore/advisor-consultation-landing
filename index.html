@@ -7,23 +7,28 @@
 <title>Advisor Consultation Landing Pages | Four directions to compare</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:opsz,wght@6..72,300..500&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="shared.css" />
 <style>
   .vcard { display:flex; flex-direction:column; transition: transform .35s var(--ease); }
   .vcard:hover { transform: translateY(-4px); }
-  .vframe { aspect-ratio: 16/10; border-radius: var(--radius) var(--radius) 0 0; overflow:hidden; border:1px solid var(--line); border-bottom:none; background:#000; position:relative; }
-  .vframe iframe { width:1280px; height:800px; transform: scale(0.355); transform-origin: top left; border:0; pointer-events:none; }
-  .vframe::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 60%, rgba(8,8,10,0.5)); pointer-events:none; }
+  /* Fixed-height crop. The iframe renders at exactly the column width
+     (width:200% + scale .5) and overscans the box height, so it fills with
+     no dead band at any breakpoint. */
+  .vframe { height:400px; border-radius: var(--radius) var(--radius) 0 0; overflow:hidden; border:1px solid var(--line); border-bottom:none; background:#000; position:relative; }
+  .vframe iframe { width:200%; height:200%; transform: scale(0.5); transform-origin: top left; border:0; pointer-events:none; }
+  .vframe::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 62%, rgba(8,8,10,0.65)); pointer-events:none; }
   .vcard:hover .vframe { border-color: var(--gold-deep); }
   .vmeta { border:1px solid var(--line); border-top:none; border-radius:0 0 var(--radius) var(--radius); padding:26px; background:linear-gradient(180deg,var(--surface),var(--bg-2)); flex:1; display:flex; flex-direction:column; }
   .vbadge { font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-soft); }
   .open-row { display:flex; gap:10px; margin-top:auto; padding-top:20px; }
   .grid-v { display:grid; grid-template-columns:repeat(2,1fr); gap:30px; }
-  @media (max-width:820px){ .grid-v { grid-template-columns:1fr; } .vframe iframe { transform: scale(0.52); } .vframe { aspect-ratio: 16/12; } }
+  @media (max-width:820px){ .grid-v { grid-template-columns:1fr; } .vframe { height:440px; } }
 </style>
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -31,6 +36,8 @@
     <span class="dim" style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.08em;">click a card to open full screen</span>
   </div>
 </header>
+
+<main id="main">
 
 <section class="dotgrid" style="padding:80px 0 56px;">
   <div class="glow" style="width:600px;height:600px;background:var(--gold-glow);top:-240px;left:30%;"></div>
@@ -46,40 +53,40 @@
     <div class="grid-v">
 
       <a class="vcard" href="v1-diagnosis.html">
-        <div class="vframe"><iframe src="v1-diagnosis.html" scrolling="no" tabindex="-1" title="The Diagnosis preview"></iframe></div>
+        <div class="vframe"><iframe src="v1-diagnosis.html" scrolling="no" tabindex="-1" aria-hidden="true" title="The Diagnosis preview"></iframe></div>
         <div class="vmeta">
           <span class="vbadge">Version 01</span>
-          <h3 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">The Diagnosis</h3>
+          <h2 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">The Diagnosis</h2>
           <p class="muted" style="font-size:16px;line-height:1.6;">Objection-crusher lead: "This isn't advice. It's a diagnosis." Frames the call as a bottleneck audit across leads, follow-up, and closing. Best at killing the "just another consultation" doubt.</p>
           <div class="open-row"><span class="btn-gold" style="padding:11px 20px;">Open full page &rarr;</span></div>
         </div>
       </a>
 
       <a class="vcard" href="v2-broken-systems.html">
-        <div class="vframe"><iframe src="v2-broken-systems.html" scrolling="no" tabindex="-1" title="Broken Systems preview"></iframe></div>
+        <div class="vframe"><iframe src="v2-broken-systems.html" scrolling="no" tabindex="-1" aria-hidden="true" title="Broken Systems preview"></iframe></div>
         <div class="vmeta">
           <span class="vbadge">Version 02</span>
-          <h3 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">Broken Systems</h3>
+          <h2 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">Broken Systems</h2>
           <p class="muted" style="font-size:16px;line-height:1.6;">Pain-point + comparison: "Great advisors don't fail. Broken systems do." Built around a side-by-side of working harder vs building systems. Validates the advisor, blames the process.</p>
           <div class="open-row"><span class="btn-gold" style="padding:11px 20px;">Open full page &rarr;</span></div>
         </div>
       </a>
 
       <a class="vcard" href="v3-year-one.html">
-        <div class="vframe"><iframe src="v3-year-one.html" scrolling="no" tabindex="-1" title="The Year-One Path preview"></iframe></div>
+        <div class="vframe"><iframe src="v3-year-one.html" scrolling="no" tabindex="-1" aria-hidden="true" title="The Year-One Path preview"></iframe></div>
         <div class="vmeta">
           <span class="vbadge">Version 03</span>
-          <h3 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">The Year-One Path</h3>
+          <h2 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">The Year-One Path</h2>
           <p class="muted" style="font-size:16px;line-height:1.6;">Transformation + authority: "MDRT and COT on a system that's already proven." Leads with the outcome and the 10+ years / 1,000+ clients track record. Aspirational and results-forward.</p>
           <div class="open-row"><span class="btn-gold" style="padding:11px 20px;">Open full page &rarr;</span></div>
         </div>
       </a>
 
       <a class="vcard" href="v4-ai-advantage.html">
-        <div class="vframe"><iframe src="v4-ai-advantage.html" scrolling="no" tabindex="-1" title="The AI Advantage preview"></iframe></div>
+        <div class="vframe"><iframe src="v4-ai-advantage.html" scrolling="no" tabindex="-1" aria-hidden="true" title="The AI Advantage preview"></iframe></div>
         <div class="vmeta">
           <span class="vbadge">Version 04</span>
-          <h3 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">The AI Advantage</h3>
+          <h2 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">The AI Advantage</h2>
           <p class="muted" style="font-size:16px;line-height:1.6;">AI angle: "AI isn't replacing advisors. It's replacing bad systems." Tech-forward, with a trust guardrail section that handles the "won't AI make me sound fake" fear head-on.</p>
           <div class="open-row"><span class="btn-gold" style="padding:11px 20px;">Open full page &rarr;</span></div>
         </div>
@@ -88,6 +95,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="ft">
   <div class="wrap ft-inner">

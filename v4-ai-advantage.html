@@ -11,20 +11,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:opsz,wght@6..72,300..500&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="shared.css" />
 <script src="shared.js"></script>
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <div class="scarcity"><span class="dot"></span><b>Limited slots</b> this month, open until they're full.</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
     <div class="logo-row"><span class="logo-mark">A</span><span class="brand">[Your Name]</span></div>
-    <a href="#book" class="btn-gold" style="padding:11px 20px;">Book a consultation</a>
+    <a href="#book" class="btn-gold" style="padding:11px 20px;">See how AI fits your business</a>
   </div>
 </header>
+
+<main id="main">
 
 <!-- HERO -->
 <section class="dotgrid" data-hero style="padding-top:120px;padding-bottom:120px;">
@@ -34,7 +38,7 @@
     <h1 class="display h-hero reveal" data-rev style="text-align:center;max-width:19ch;margin:0 auto;">
       AI isn't replacing advisors. It's replacing <span class="gold" style="font-style:italic;">bad systems</span>.
     </h1>
-    <p class="lead reveal" data-rev style="text-align:center;max-width:60ch;margin:30px auto 0;">
+    <p class="lead hero-lead reveal" data-rev style="margin:30px auto 0;">
       Never forget a follow-up. Never let a warm lead go cold. Never guess what to say next. This consultation shows how advisors use AI-driven workflows to handle leads and follow-up, without sounding robotic or losing trust, on top of a sales process refined over 10+ years.
     </p>
     <div class="reveal" data-rev style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px;">
@@ -42,7 +46,7 @@
       <a href="#stack" class="btn-ghost">See the workflow</a>
     </div>
     <div class="reveal" data-rev style="margin-top:34px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--text-dim);text-transform:uppercase;">
-      <span>10+ years</span><span style="color:var(--gold-deep)">/</span><span>1,000+ clients closed</span><span style="color:var(--gold-deep)">/</span><span>human relationships, AI leverage</span>
+      <span>10+ years</span><span style="color:var(--gold-deep)" aria-hidden="true">/</span><span>1,000+ clients closed</span><span style="color:var(--gold-deep)" aria-hidden="true">/</span><span>human relationships, AI leverage</span>
     </div>
   </div>
 </section>
@@ -73,7 +77,7 @@
   <div class="wrap">
     <div class="panel reveal" data-rev>
       <div class="glow" style="width:360px;height:360px;background:var(--gold-glow);top:-140px;right:-120px;"></div>
-      <span class="quote-mark">&rdquo;</span>
+      <span class="quote-mark" aria-hidden="true">&rdquo;</span>
       <div style="position:relative;z-index:1;max-width:68ch;">
         <span class="eyebrow">The fear, handled</span>
         <h2 class="h-sub reveal" data-rev style="margin:18px 0 0;">"Won't AI make me sound fake?"</h2>
@@ -121,17 +125,33 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section>
+  <div class="wrap" style="max-width:840px;">
+    <span class="eyebrow reveal" data-rev>Before you book</span>
+    <h2 class="h-sec reveal" data-rev style="margin:18px 0 30px;">The questions advisors ask first.</h2>
+    <div class="reveal" data-rev>
+      <details class="faq"><summary>Won't AI make me sound fake to clients? <span class="plus" aria-hidden="true">+</span></summary><p>Not the way this works. AI drafts and organizes, you approve and send. Clients still get the real you. What goes away is the hours of admin around the relationship, not the relationship itself.</p></details>
+      <details class="faq"><summary>I'm not technical. Is this hard to run? <span class="plus" aria-hidden="true">+</span></summary><p>The workflow is built for advisors, not engineers. On the call we map it to the tools you already use and show you the parts that run on their own.</p></details>
+      <details class="faq"><summary>How is this different from things that didn't work before? <span class="plus" aria-hidden="true">+</span></summary><p>It's execution, not theory. The sales process underneath was refined over 10+ years and used to close more than 1,000 clients. The AI layer sits on top of that, it doesn't replace the fundamentals.</p></details>
+      <details class="faq"><summary>Is there any cost or obligation? <span class="plus" aria-hidden="true">+</span></summary><p>No. The session is a working consultation, not a contract. You keep the AI workflow guide regardless.</p></details>
+    </div>
+  </div>
+</section>
+
 <!-- BOOK -->
 <section id="book" class="dotgrid" style="border-top:1px solid var(--line);">
   <div class="glow" style="width:680px;height:680px;background:var(--gold-glow);bottom:-280px;left:50%;transform:translateX(-50%);"></div>
   <div class="wrap" style="position:relative;z-index:1;text-align:center;">
     <span class="eyebrow center reveal" data-rev>Book your consultation</span>
     <h2 class="display h-hero reveal" data-rev style="margin:18px auto 0;max-width:18ch;font-size:clamp(34px,5.4vw,62px);">Work smarter. Close more. Keep the trust.</h2>
-    <p class="lead reveal" data-rev style="margin:22px auto 0;max-width:54ch;">See exactly how the AI workflow fits your current setup. Leave with the guide and a plan, whether or not we work together.</p>
-    <div class="reveal" data-rev style="margin-top:38px;"><a href="#" class="btn-gold" style="font-size:15px;padding:18px 40px;">See how AI fits your business &rarr;</a></div>
+    <p class="lead hero-lead reveal" data-rev style="margin:22px auto 0;">See exactly how the AI workflow fits your current setup. Leave with the guide and a plan, whether or not we work together.</p>
+    <div class="reveal" data-rev style="margin-top:38px;"><button type="button" class="btn-gold" style="font-size:15px;padding:18px 40px;">See how AI fits your business &rarr;</button></div>
     <div class="reveal" data-rev style="margin-top:20px;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--text-dim);text-transform:uppercase;">Private · No obligation · Limited slots</div>
   </div>
 </section>
+
+</main>
 
 <footer class="ft">
   <div class="wrap ft-inner">

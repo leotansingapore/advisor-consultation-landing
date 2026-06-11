@@ -11,11 +11,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:opsz,wght@6..72,300..500&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="shared.css" />
 <script src="shared.js"></script>
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <div class="scarcity"><span class="dot"></span><b>Limited slots</b> this month to keep every diagnosis hands-on. Booking closes when they're full.</div>
 
@@ -26,6 +28,8 @@
   </div>
 </header>
 
+<main id="main">
+
 <!-- HERO -->
 <section class="dotgrid" data-hero style="padding-top:120px;padding-bottom:128px;">
   <div class="glow" style="width:640px;height:640px;background:var(--gold-glow);top:-220px;left:50%;transform:translateX(-50%);"></div>
@@ -34,7 +38,7 @@
     <h1 class="display h-hero reveal" data-rev style="text-align:center;max-width:18ch;margin:0 auto;">
       This isn't advice.<br />It's a <span class="gold" style="font-style:italic;">diagnosis</span>.
     </h1>
-    <p class="lead reveal" data-rev style="text-align:center;max-width:58ch;margin:30px auto 0;">
+    <p class="lead hero-lead reveal" data-rev style="margin:30px auto 0;">
       You don't need more motivation or another course. You need to know exactly where your business is leaking, leads, follow-up, or closing, and the system that fixes it. In one session we run that audit on your practice and hand you the roadmap to MDRT or COT.
     </p>
     <div class="reveal" data-rev style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px;">
@@ -42,7 +46,7 @@
       <a href="#how" class="btn-ghost">How it works</a>
     </div>
     <div class="reveal" data-rev style="margin-top:34px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--text-dim);text-transform:uppercase;">
-      <span>10+ years</span><span style="color:var(--gold-deep)">/</span><span>1,000+ clients closed</span><span style="color:var(--gold-deep)">/</span><span>built for advisors</span>
+      <span>10+ years</span><span style="color:var(--gold-deep)" aria-hidden="true">/</span><span>1,000+ clients closed</span><span style="color:var(--gold-deep)" aria-hidden="true">/</span><span>built for advisors</span>
     </div>
   </div>
 </section>
@@ -94,7 +98,7 @@
   <div class="wrap">
     <div class="panel reveal" data-rev>
       <div class="glow" style="width:360px;height:360px;background:var(--gold-glow);top:-140px;left:-120px;"></div>
-      <span class="quote-mark">&rdquo;</span>
+      <span class="quote-mark" aria-hidden="true">&rdquo;</span>
       <div style="position:relative;z-index:1;max-width:68ch;">
         <span class="eyebrow">The honest objection</span>
         <h2 class="h-sub reveal" data-rev style="margin:18px 0 0;">"Isn't this just another consultation?"</h2>
@@ -127,11 +131,11 @@
     <span class="eyebrow reveal" data-rev>Before you book</span>
     <h2 class="h-sec reveal" data-rev style="margin:18px 0 30px;">The questions advisors ask first.</h2>
     <div class="reveal" data-rev>
-      <details class="faq"><summary>What actually happens on the call? <span class="plus">+</span></summary><p>We look at your real numbers, where your leads come from, how you follow up, and how you close, and find the one bottleneck holding your production back. You leave with that diagnosis and a roadmap to fix it.</p></details>
-      <details class="faq"><summary>I'm already busy. Is this worth the time? <span class="plus">+</span></summary><p>The whole point is to make you produce more without more hours. One session that finds your highest-impact fix is the opposite of busywork.</p></details>
-      <details class="faq"><summary>How is this different from programs that didn't work for me? <span class="plus">+</span></summary><p>Most programs sell theory and motivation. This is execution. The systems were refined over 10+ years and used to close 1,000+ clients, and the call targets your specific business, not a generic playbook.</p></details>
-      <details class="faq"><summary>Can this really get me to MDRT or COT in year one? <span class="plus">+</span></summary><p>For some advisors, yes, when the bottleneck is clear and the systems get installed properly. We'll be straight with you on the call about what's realistic for your situation.</p></details>
-      <details class="faq"><summary>Is there any cost or obligation? <span class="plus">+</span></summary><p>No. The session is a diagnosis, not a contract. You keep the audit and the roadmap regardless.</p></details>
+      <details class="faq"><summary>What actually happens on the call? <span class="plus" aria-hidden="true">+</span></summary><p>We look at your real numbers, where your leads come from, how you follow up, and how you close, and find the one bottleneck holding your production back. You leave with that diagnosis and a roadmap to fix it.</p></details>
+      <details class="faq"><summary>I'm already busy. Is this worth the time? <span class="plus" aria-hidden="true">+</span></summary><p>The whole point is to make you produce more without more hours. One session that finds your highest-impact fix is the opposite of busywork.</p></details>
+      <details class="faq"><summary>How is this different from programs that didn't work for me? <span class="plus" aria-hidden="true">+</span></summary><p>Most programs sell theory and motivation. This is execution. The systems were refined over 10+ years and used to close 1,000+ clients, and the call targets your specific business, not a generic playbook.</p></details>
+      <details class="faq"><summary>Can this really get me to MDRT or COT in year one? <span class="plus" aria-hidden="true">+</span></summary><p>For some advisors, yes, when the bottleneck is clear and the systems get installed properly. We'll be straight with you on the call about what's realistic for your situation.</p></details>
+      <details class="faq"><summary>Is there any cost or obligation? <span class="plus" aria-hidden="true">+</span></summary><p>No. The session is a diagnosis, not a contract. You keep the audit and the roadmap regardless.</p></details>
     </div>
   </div>
 </section>
@@ -142,11 +146,13 @@
   <div class="wrap" style="position:relative;z-index:1;text-align:center;">
     <span class="eyebrow center reveal" data-rev>Book your diagnosis</span>
     <h2 class="display h-hero reveal" data-rev style="margin:18px auto 0;max-width:17ch;font-size:clamp(34px,5.4vw,62px);">Find the one fix that moves your production most.</h2>
-    <p class="lead reveal" data-rev style="margin:22px auto 0;max-width:54ch;">Bring your real numbers. Leave with your bottleneck named, a roadmap, and the audit checklist. Slots are limited each month.</p>
-    <div class="reveal" data-rev style="margin-top:38px;"><a href="#" class="btn-gold" style="font-size:15px;padding:18px 40px;">Book the diagnosis &rarr;</a></div>
+    <p class="lead hero-lead reveal" data-rev style="margin:22px auto 0;">Bring your real numbers. Leave with your bottleneck named, a roadmap, and the audit checklist. Slots are limited each month.</p>
+    <div class="reveal" data-rev style="margin-top:38px;"><button type="button" class="btn-gold" style="font-size:15px;padding:18px 40px;">Book the diagnosis &rarr;</button></div>
     <div class="reveal" data-rev style="margin-top:20px;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--text-dim);text-transform:uppercase;">Private · Execution-focused · No obligation</div>
   </div>
 </section>
+
+</main>
 
 <footer class="ft">
   <div class="wrap ft-inner">
