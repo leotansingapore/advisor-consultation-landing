@@ -4,34 +4,40 @@
 <meta charset="UTF-8" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Advisor Consultation Landing Pages | 4 versions to compare</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<title>Advisor Consultation Landing Pages | Four directions to compare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="shared.css" />
 <style>
-  .vcard { display:flex; flex-direction:column; }
-  .vcard .frame { aspect-ratio: 16/10; border-radius: 12px 12px 0 0; overflow:hidden; border:1px solid var(--border); border-bottom:none; background:#000; position:relative; }
-  .vcard iframe { width:1280px; height:800px; transform: scale(0.34); transform-origin: top left; border:0; pointer-events:none; }
-  .vcard .meta { border:1px solid var(--border); border-top:none; border-radius:0 0 12px 12px; padding:22px; background:var(--surface); flex:1; display:flex; flex-direction:column; }
-  .vcard:hover .frame { border-color: var(--gold-deep); }
-  .open-row { display:flex; gap:10px; margin-top:auto; padding-top:18px; }
-  .grid-v { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
-  @media (max-width:820px){ .grid-v { grid-template-columns:1fr; } .vcard iframe { transform: scale(0.5); } .vcard .frame { aspect-ratio: 16/12; } }
+  .vcard { display:flex; flex-direction:column; transition: transform .35s var(--ease); }
+  .vcard:hover { transform: translateY(-4px); }
+  .vframe { aspect-ratio: 16/10; border-radius: var(--radius) var(--radius) 0 0; overflow:hidden; border:1px solid var(--line); border-bottom:none; background:#000; position:relative; }
+  .vframe iframe { width:1280px; height:800px; transform: scale(0.355); transform-origin: top left; border:0; pointer-events:none; }
+  .vframe::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 60%, rgba(8,8,10,0.5)); pointer-events:none; }
+  .vcard:hover .vframe { border-color: var(--gold-deep); }
+  .vmeta { border:1px solid var(--line); border-top:none; border-radius:0 0 var(--radius) var(--radius); padding:26px; background:linear-gradient(180deg,var(--surface),var(--bg-2)); flex:1; display:flex; flex-direction:column; }
+  .vbadge { font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-soft); }
+  .open-row { display:flex; gap:10px; margin-top:auto; padding-top:20px; }
+  .grid-v { display:grid; grid-template-columns:repeat(2,1fr); gap:30px; }
+  @media (max-width:820px){ .grid-v { grid-template-columns:1fr; } .vframe iframe { transform: scale(0.52); } .vframe { aspect-ratio: 16/12; } }
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <div class="logo-row"><span class="logo-mark">A</span><span class="serif" style="font-size:19px;font-weight:600;">Advisor consultation, 4 angles</span></div>
-    <span class="dim" style="font-size:13px;">click any card to open full screen</span>
+    <div class="logo-row"><span class="logo-mark">A</span><span class="brand">Advisor consultation</span></div>
+    <span class="dim" style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.08em;">click a card to open full screen</span>
   </div>
 </header>
 
-<section style="padding:56px 0 40px;">
-  <div class="wrap">
-    <div class="eyebrow">Mockups for review</div>
-    <h1 class="serif" style="font-size:clamp(30px,4.5vw,46px);line-height:1.1;font-weight:600;margin:14px 0 0;max-width:24ch;">Four landing pages for the scaling consultation.</h1>
-    <p class="muted" style="margin-top:14px;font-size:18px;max-width:70ch;">Same offer, same proof, same booking goal. Each leads with a different proven angle so you can see which framing lands. All share the consultative extras: scarcity bar, the named Scalable Advisory Blueprint, a free lead magnet, and walk-away value. Placeholder copy and [X] metrics throughout.</p>
+<section class="dotgrid" style="padding:80px 0 56px;">
+  <div class="glow" style="width:600px;height:600px;background:var(--gold-glow);top:-240px;left:30%;"></div>
+  <div class="wrap" style="position:relative;z-index:1;">
+    <span class="eyebrow">Mockups for review · pick a direction</span>
+    <h1 class="display" style="font-size:clamp(34px,5.2vw,62px);margin:20px 0 0;max-width:20ch;">Four landing pages for the scaling <span class="gold" style="font-style:italic;">consultation</span>.</h1>
+    <p class="lead" style="margin-top:20px;max-width:72ch;">Same offer, same proof, same booking goal. Each leads with a different proven angle so you can see which framing lands. All share the consultative extras: a scarcity bar, the named Scalable Advisory Blueprint, a free lead magnet, and walk-away value. Placeholder copy and [X] metrics throughout.</p>
   </div>
 </section>
 
@@ -40,42 +46,42 @@
     <div class="grid-v">
 
       <a class="vcard" href="v1-diagnosis.html">
-        <div class="frame"><iframe src="v1-diagnosis.html" scrolling="no" tabindex="-1"></iframe></div>
-        <div class="meta">
-          <div class="eyebrow">Version 1</div>
-          <h3 class="serif" style="font-size:24px;font-weight:600;margin:8px 0 6px;">The Diagnosis</h3>
-          <p class="muted" style="margin:0;line-height:1.6;">Objection-crusher lead: "This isn't advice. It's a diagnosis." Frames the call as a bottleneck audit across leads, follow-up, and closing. Best at killing the "just another consultation" doubt.</p>
-          <div class="open-row"><span class="btn-gold" style="padding:11px 20px;font-size:14px;">Open full page &rarr;</span></div>
+        <div class="vframe"><iframe src="v1-diagnosis.html" scrolling="no" tabindex="-1" title="The Diagnosis preview"></iframe></div>
+        <div class="vmeta">
+          <span class="vbadge">Version 01</span>
+          <h3 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">The Diagnosis</h3>
+          <p class="muted" style="font-size:16px;line-height:1.6;">Objection-crusher lead: "This isn't advice. It's a diagnosis." Frames the call as a bottleneck audit across leads, follow-up, and closing. Best at killing the "just another consultation" doubt.</p>
+          <div class="open-row"><span class="btn-gold" style="padding:11px 20px;">Open full page &rarr;</span></div>
         </div>
       </a>
 
       <a class="vcard" href="v2-broken-systems.html">
-        <div class="frame"><iframe src="v2-broken-systems.html" scrolling="no" tabindex="-1"></iframe></div>
-        <div class="meta">
-          <div class="eyebrow">Version 2</div>
-          <h3 class="serif" style="font-size:24px;font-weight:600;margin:8px 0 6px;">Broken Systems</h3>
-          <p class="muted" style="margin:0;line-height:1.6;">Pain-point + comparison: "Great advisors don't fail. Broken systems do." Built around a side-by-side of working harder vs building systems. Validates the advisor, blames the process.</p>
-          <div class="open-row"><span class="btn-gold" style="padding:11px 20px;font-size:14px;">Open full page &rarr;</span></div>
+        <div class="vframe"><iframe src="v2-broken-systems.html" scrolling="no" tabindex="-1" title="Broken Systems preview"></iframe></div>
+        <div class="vmeta">
+          <span class="vbadge">Version 02</span>
+          <h3 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">Broken Systems</h3>
+          <p class="muted" style="font-size:16px;line-height:1.6;">Pain-point + comparison: "Great advisors don't fail. Broken systems do." Built around a side-by-side of working harder vs building systems. Validates the advisor, blames the process.</p>
+          <div class="open-row"><span class="btn-gold" style="padding:11px 20px;">Open full page &rarr;</span></div>
         </div>
       </a>
 
       <a class="vcard" href="v3-year-one.html">
-        <div class="frame"><iframe src="v3-year-one.html" scrolling="no" tabindex="-1"></iframe></div>
-        <div class="meta">
-          <div class="eyebrow">Version 3</div>
-          <h3 class="serif" style="font-size:24px;font-weight:600;margin:8px 0 6px;">The Year-One Path</h3>
-          <p class="muted" style="margin:0;line-height:1.6;">Transformation + authority: "MDRT and COT on a system that's already proven." Leads with the outcome and the 10+ years / 1,000+ clients track record. Aspirational and results-forward.</p>
-          <div class="open-row"><span class="btn-gold" style="padding:11px 20px;font-size:14px;">Open full page &rarr;</span></div>
+        <div class="vframe"><iframe src="v3-year-one.html" scrolling="no" tabindex="-1" title="The Year-One Path preview"></iframe></div>
+        <div class="vmeta">
+          <span class="vbadge">Version 03</span>
+          <h3 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">The Year-One Path</h3>
+          <p class="muted" style="font-size:16px;line-height:1.6;">Transformation + authority: "MDRT and COT on a system that's already proven." Leads with the outcome and the 10+ years / 1,000+ clients track record. Aspirational and results-forward.</p>
+          <div class="open-row"><span class="btn-gold" style="padding:11px 20px;">Open full page &rarr;</span></div>
         </div>
       </a>
 
       <a class="vcard" href="v4-ai-advantage.html">
-        <div class="frame"><iframe src="v4-ai-advantage.html" scrolling="no" tabindex="-1"></iframe></div>
-        <div class="meta">
-          <div class="eyebrow">Version 4</div>
-          <h3 class="serif" style="font-size:24px;font-weight:600;margin:8px 0 6px;">The AI Advantage</h3>
-          <p class="muted" style="margin:0;line-height:1.6;">AI angle: "AI isn't replacing advisors. It's replacing bad systems." Tech-forward, with a trust guardrail section that handles the "won't AI make me sound fake" fear head-on.</p>
-          <div class="open-row"><span class="btn-gold" style="padding:11px 20px;font-size:14px;">Open full page &rarr;</span></div>
+        <div class="vframe"><iframe src="v4-ai-advantage.html" scrolling="no" tabindex="-1" title="The AI Advantage preview"></iframe></div>
+        <div class="vmeta">
+          <span class="vbadge">Version 04</span>
+          <h3 class="serif" style="font-size:25px;font-weight:500;margin:10px 0 8px;">The AI Advantage</h3>
+          <p class="muted" style="font-size:16px;line-height:1.6;">AI angle: "AI isn't replacing advisors. It's replacing bad systems." Tech-forward, with a trust guardrail section that handles the "won't AI make me sound fake" fear head-on.</p>
+          <div class="open-row"><span class="btn-gold" style="padding:11px 20px;">Open full page &rarr;</span></div>
         </div>
       </a>
 
@@ -85,8 +91,8 @@
 
 <footer class="ft">
   <div class="wrap ft-inner">
-    <div class="logo-row"><span class="logo-mark" style="width:24px;height:24px;font-size:14px;border-radius:6px;">A</span><span class="muted" style="font-size:14px;">Pick one and we build it out for real</span></div>
-    <div class="dim" style="font-size:13px;">Swap [Your Name], real numbers, booking URL, and the lead magnets on the winner.</div>
+    <div class="logo-row"><span class="logo-mark" style="width:26px;height:26px;font-size:15px;border-radius:7px;">A</span><span class="muted" style="font-family:'Fraunces',serif;font-size:16px;">Pick one and we build it out for real</span></div>
+    <div class="dim">Swap [Your Name], real numbers, booking URL, and lead magnets on the winner</div>
   </div>
 </footer>
 
