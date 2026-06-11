@@ -1,0 +1,4 @@
+.gstack/
+.vercel/
+.DS_Store
+*.log
